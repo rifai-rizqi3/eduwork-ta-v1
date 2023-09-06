@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BsTelephone } from "react-icons/bs";
+import { GoInfo, GoGlobe } from "react-icons/go";
+import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { Navbar } from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="max-w-screen-2xl md:justify-between md:flex mx-auto text-gray-500">
+        {/* kanan */}
+        <div>
+          <div className="flex items-center p-4 space-x-3">
+            <BsTelephone />
+            <p>(021) 893457</p>
+            <a
+              className="hover:text-red-500"
+              href="https://www.instagram.com/your_instagram_link"
+              target="_blank"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              className="hover:text-red-500"
+              href="https://www.facebook.com/your_facebook_link"
+              target="_blank"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              className="hover:text-red-500"
+              href="https://twitter.com/your_twitter_link"
+              target="_blank"
+            >
+              <FaTwitter />
+            </a>
+          </div>
+        </div>
+        {/* kiri */}
+        <div>
+          <div className="flex items-center p-4 space-x-3">
+            <GoInfo />
+            <p>Support</p>
+            <GoGlobe />
+            <p>ID</p>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <hr />
+      <Navbar />
     </>
-  )
+  );
 }
-
-export default App
+export default App;
