@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Tampilan mobile */
+/* @media (max-width: 768px) {
+  #mobile-menu-toggle:focus+#mobile-menu {
+    display: block;
+  }
+
+  #mobile-menu-toggle:not(:focus)+#mobile-menu {
+    display: none;
+  }
+} */

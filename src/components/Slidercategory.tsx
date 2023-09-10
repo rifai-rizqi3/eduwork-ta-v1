@@ -1,5 +1,7 @@
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { useEffect } from "react";
 import AOS from "aos";
@@ -10,120 +12,50 @@ export const Slidercategory = () => {
     AOS.init();
   }, []);
   return (
-    <div
-      className="md:max-w-screen-2xl p-7 md:gap-5 flex items-center mx-auto"
-      data-aos="fade-up"
-    >
+    <div className="md:max-w-screen-2xl p-7 md:gap-5 flex items-center mx-auto">
       <span>
         <MdArrowBackIos />
       </span>
       <Swiper
-        spaceBetween={30}
-        slidesPerView={3}
         loop={true}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+        navigation={true}
+        slidesPerView={1}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           640: {
             slidesPerView: 1,
-            spaceBetween: 5,
+            spaceBetween: 15,
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 25,
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 50,
+            spaceBetween: 30,
           },
         }}
-        // className="hover:scale-105 hover:shadow-lg transition-transform"
+        modules={[Pagination]}
+        className="mySwiper"
       >
-        <SwiperSlide>
-          <div className=" rounded-lg shadow-2xl">
-            <ul className="flex gap-2">
-              <li className="p-4 bg-gray-300 rounded-lg">
-                <img src="/HP.png" alt="" />
-              </li>
-              <li className="flex flex-col justify-center">
-                <p className="text-gray-500">Smartphone</p>
-                <p className="font-bold">Samsung Galaxy S23 Ultra</p>
-                <p className="text-red-500">Beli sekarang</p>
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" rounded-lg shadow-2xl">
-            <ul className="flex gap-2">
-              <li className="p-4 bg-gray-300 rounded-lg">
-                <img src="/HP.png" alt="" />
-              </li>
-              <li className="flex flex-col justify-center">
-                <p className="text-gray-500">Smartphone</p>
-                <p className="font-bold">Samsung Galaxy S23 Ultra</p>
-                <p className="text-red-500">Beli sekarang</p>
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" rounded-lg shadow-2xl">
-            <ul className="flex gap-2">
-              <li className="p-4 bg-gray-300 rounded-lg">
-                <img src="/HP.png" alt="" />
-              </li>
-              <li className="flex flex-col justify-center">
-                <p className="text-gray-500">Smartphone</p>
-                <p className="font-bold">Samsung Galaxy S23 Ultra</p>
-                <p className="text-red-500">Beli sekarang</p>
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" rounded-lg shadow-2xl">
-            <ul className="flex gap-2">
-              <li className="p-4 bg-gray-300 rounded-lg">
-                <img src="/HP.png" alt="" />
-              </li>
-              <li className="flex flex-col justify-center">
-                <p className="text-gray-500">Smartphone</p>
-                <p className="font-bold">Samsung Galaxy S23 Ultra</p>
-                <p className="text-red-500">Beli sekarang</p>
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" rounded-lg shadow-2xl">
-            <ul className="flex gap-2">
-              <li className="p-4 bg-gray-300 rounded-lg">
-                <img src="/HP.png" alt="" />
-              </li>
-              <li className="flex flex-col justify-center">
-                <p className="text-gray-500">Smartphone</p>
-                <p className="font-bold">Samsung Galaxy S23 Ultra</p>
-                <p className="text-red-500">Beli sekarang</p>
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" rounded-lg shadow-2xl">
-            <ul className="flex gap-2">
-              <li className="p-4 bg-gray-300 rounded-lg">
-                <img src="/HP.png" alt="" />
-              </li>
-              <li className="flex flex-col justify-center">
-                <p className="text-gray-500">Smartphone</p>
-                <p className="font-bold">Samsung Galaxy S23 Ultra</p>
-                <p className="text-red-500">Beli sekarang</p>
-              </li>
-            </ul>
-          </div>
-        </SwiperSlide>
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
+
       <span>
         <MdArrowForwardIos />
       </span>

@@ -11,7 +11,7 @@ function App() {
         <div>
           <div className="flex items-center p-4 space-x-3">
             <BsTelephone />
-            <p>(021) 893457</p>
+            <p>(021) 123456789</p>
             <a
               className="hover:text-red-500"
               href="https://www.instagram.com/your_instagram_link"
