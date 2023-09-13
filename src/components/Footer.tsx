@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="text-center bg-gray-200">
+      <div className="p-5 text-center bg-gray-200">
         <p>All Rights Reserved © 2023</p>
       </div>
     </>
