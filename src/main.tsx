@@ -8,6 +8,7 @@ import { Promo } from "./components/Promo.tsx";
 import "./index.css";
 import { Produk } from "./components/Produk.tsx";
 import { Brand } from "./components/Brand.tsx";
+import Footer from "./components/Footer.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -18,5 +19,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Promo />
     <Produk />
     <Brand />
+    <Footer />
   </React.StrictMode>
 );
