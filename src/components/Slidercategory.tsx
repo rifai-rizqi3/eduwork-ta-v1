@@ -3,11 +3,36 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-import { useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 export const Slidercategory = () => {
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+
+  const getProductList = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        "https://sistemtoko.com/public/demo/product"
+      );
+      console.log(response);
+      setProducts(response.data.aaData.slice(0, 1));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    getProductList();
+
+    return () => {};
+  }, [getProductList]);
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -45,15 +70,132 @@ export const Slidercategory = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            {products.length > 0 &&
+              products.map((product, index) => (
+                <div key={index}>
+                  <img
+                    className="w-[60%] mx-auto"
+                    src={product?.photo}
+                    alt=""
+                  />
+                </div>
+              ))}
+          </div>
+        </SwiperSlide>
       </Swiper>
 
       <span>

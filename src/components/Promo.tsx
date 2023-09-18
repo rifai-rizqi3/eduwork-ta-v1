@@ -32,6 +32,7 @@ export const Promo = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <div data-aos="fade-up">
       <div>
@@ -65,7 +66,10 @@ export const Promo = () => {
                 </div>
               )}
               {index === 1 && (
-                <div className="flex flex-col justify-center col-span-1 row-span-1 pb-3 text-center bg-blue-500">
+                <div
+                  key={index}
+                  className="flex flex-col justify-center col-span-1 row-span-1 pb-3 text-center bg-blue-500"
+                >
                   <img
                     className="w-[200px] mx-auto"
                     src={product?.photo}
@@ -76,7 +80,10 @@ export const Promo = () => {
                 </div>
               )}
               {index === 2 && (
-                <div className="flex flex-col justify-center col-span-1 row-span-1 pb-3 text-center bg-yellow-500">
+                <div
+                  key={index}
+                  className="flex flex-col justify-center col-span-1 row-span-1 pb-3 text-center bg-yellow-500"
+                >
                   <img
                     className="w-[200px] mx-auto"
                     src={product?.photo}
@@ -87,7 +94,10 @@ export const Promo = () => {
                 </div>
               )}
               {index === 3 && (
-                <div className="flex flex-col items-center justify-center col-span-2 row-span-1 pb-3 bg-orange-500">
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center col-span-2 row-span-1 pb-3 bg-orange-500"
+                >
                   <img
                     className="w-[200px] mx-auto"
                     src={product?.photo}
