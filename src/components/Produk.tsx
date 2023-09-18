@@ -43,6 +43,7 @@ export const Produk = () => {
               >
                 <img className="w-[60%] mx-auto" src={product?.photo} alt="" />
                 <h1 className="text-xl font-bold">{product?.name}</h1>
+                <h1 className="text-xl font-semibold">{product?.price}</h1>
                 <p className="text-gray-500">{product?.description}</p>
               </div>
             ))}
