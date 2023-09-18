@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, index } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -49,8 +49,11 @@ export const Kategori = () => {
       <div>
         <div className="max-w-screen-2xl md:justify-between grid grid-cols-5 p-5 mx-auto">
           {products.length > 0 &&
-            products.map((product) => (
-              <div className="aspect-square flex flex-col justify-center w-full text-center border">
+            products.map((product, index) => (
+              <div
+                key={index}
+                className="aspect-square flex flex-col justify-center w-full text-center border"
+              >
                 <img className="w-[50%] mx-auto" src={product?.photo} alt="" />
                 <h1 className="text-xl font-bold">
                   {product?.product_category_name}
